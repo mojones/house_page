@@ -1,0 +1,59 @@
+# Destinations To Edit
+#
+# Edit this list directly.
+# - Delete a line to remove a destination.
+# - Add a new bullet under a category to add a destination.
+# - Rename a category heading to rename the category.
+# - Add a new heading and bullets to add a category.
+# - Move bullets between headings to recategorise destinations.
+#
+# When you are done, tell me and I will update the app, look up missing details,
+# and add/remove walking and cycling routes as needed.
+
+## Education
+- Knox Academy
+- Haddington Primary School
+- Letham Mains Primary School
+- The Compass School
+- St Mary's RC Primary School
+
+## Transport
+- Market Street bus stops
+- High Street bus stops
+- National Cycle Route 76
+- Longniddry railway path
+
+## Public services
+- John Gray Centre & Library
+- John Muir House
+- East Lothian Community Hospital
+- Tyne Medical Practice
+- Poldrate Arts & Crafts Centre
+- Haddington Corn Exchange
+
+## Exercise
+- Aubigny Sports Centre and Swimming Pool
+- Neilson Park
+- Haddington Golf Club
+- Neilson Park football pitches
+- Neilson Park Skatepark
+- Haddington Rugby Football Club
+
+## Groceries
+- Tesco Superstore
+- Aldi Haddington
+- Greggs
+- The Foraging Goat
+
+## Food & drink
+- Falko Café & Restaurant
+- The Waterside
+- The Loft Café & Bakery
+- Ozys Kitchen
+- Diggory's Coffee Shop
+
+## Walks & green space
+- River Tyne walks
+- Amisfield Walled Garden
+- St Mary's Pleasance
+- Lennoxlove
