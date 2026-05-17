@@ -1,0 +1,338 @@
+[
+  {
+    "id": "knox",
+    "mode": "walking",
+    "originalPointCount": 46,
+    "pointCount": 34,
+    "distance": 1205,
+    "duration": 867
+  },
+  {
+    "id": "knox",
+    "mode": "cycling",
+    "originalPointCount": 55,
+    "pointCount": 32,
+    "distance": 1164,
+    "duration": 241
+  },
+  {
+    "id": "haddington-primary",
+    "mode": "walking",
+    "originalPointCount": 43,
+    "pointCount": 29,
+    "distance": 897,
+    "duration": 646
+  },
+  {
+    "id": "haddington-primary",
+    "mode": "cycling",
+    "originalPointCount": 47,
+    "pointCount": 22,
+    "distance": 1220,
+    "duration": 244
+  },
+  {
+    "id": "letham",
+    "mode": "walking",
+    "originalPointCount": 80,
+    "pointCount": 60,
+    "distance": 2139,
+    "duration": 1540
+  },
+  {
+    "id": "letham",
+    "mode": "cycling",
+    "originalPointCount": 88,
+    "pointCount": 44,
+    "distance": 2544,
+    "duration": 555
+  },
+  {
+    "id": "bus",
+    "mode": "walking",
+    "originalPointCount": 4,
+    "pointCount": 2,
+    "distance": 77,
+    "duration": 56
+  },
+  {
+    "id": "bus",
+    "mode": "cycling",
+    "originalPointCount": 30,
+    "pointCount": 15,
+    "distance": 580,
+    "duration": 116
+  },
+  {
+    "id": "ncn76",
+    "mode": "walking",
+    "originalPointCount": 42,
+    "pointCount": 30,
+    "distance": 779,
+    "duration": 561
+  },
+  {
+    "id": "ncn76",
+    "mode": "cycling",
+    "originalPointCount": 46,
+    "pointCount": 23,
+    "distance": 1094,
+    "duration": 228
+  },
+  {
+    "id": "railway-walk",
+    "mode": "walking",
+    "originalPointCount": 60,
+    "pointCount": 42,
+    "distance": 1370,
+    "duration": 987
+  },
+  {
+    "id": "railway-walk",
+    "mode": "cycling",
+    "originalPointCount": 53,
+    "pointCount": 25,
+    "distance": 1696,
+    "duration": 339
+  },
+  {
+    "id": "library",
+    "mode": "walking",
+    "originalPointCount": 14,
+    "pointCount": 9,
+    "distance": 192,
+    "duration": 138
+  },
+  {
+    "id": "library",
+    "mode": "cycling",
+    "originalPointCount": 14,
+    "pointCount": 10,
+    "distance": 332,
+    "duration": 69
+  },
+  {
+    "id": "council",
+    "mode": "walking",
+    "originalPointCount": 10,
+    "pointCount": 6,
+    "distance": 189,
+    "duration": 136
+  },
+  {
+    "id": "council",
+    "mode": "cycling",
+    "originalPointCount": 32,
+    "pointCount": 15,
+    "distance": 629,
+    "duration": 138
+  },
+  {
+    "id": "sports-centre",
+    "mode": "walking",
+    "originalPointCount": 31,
+    "pointCount": 21,
+    "distance": 751,
+    "duration": 541
+  },
+  {
+    "id": "sports-centre",
+    "mode": "cycling",
+    "originalPointCount": 27,
+    "pointCount": 13,
+    "distance": 798,
+    "duration": 161
+  },
+  {
+    "id": "skatepark",
+    "mode": "walking",
+    "originalPointCount": 26,
+    "pointCount": 17,
+    "distance": 681,
+    "duration": 490
+  },
+  {
+    "id": "skatepark",
+    "mode": "cycling",
+    "originalPointCount": 46,
+    "pointCount": 24,
+    "distance": 1109,
+    "duration": 236
+  },
+  {
+    "id": "golf",
+    "mode": "walking",
+    "originalPointCount": 79,
+    "pointCount": 68,
+    "distance": 2406,
+    "duration": 1732
+  },
+  {
+    "id": "golf",
+    "mode": "cycling",
+    "originalPointCount": 69,
+    "pointCount": 46,
+    "distance": 2359,
+    "duration": 523
+  },
+  {
+    "id": "tesco",
+    "mode": "walking",
+    "originalPointCount": 12,
+    "pointCount": 7,
+    "distance": 177,
+    "duration": 127
+  },
+  {
+    "id": "tesco",
+    "mode": "cycling",
+    "originalPointCount": 15,
+    "pointCount": 11,
+    "distance": 347,
+    "duration": 78
+  },
+  {
+    "id": "aldi",
+    "mode": "walking",
+    "originalPointCount": 66,
+    "pointCount": 44,
+    "distance": 1963,
+    "duration": 1413
+  },
+  {
+    "id": "aldi",
+    "mode": "cycling",
+    "originalPointCount": 74,
+    "pointCount": 36,
+    "distance": 2285,
+    "duration": 457
+  },
+  {
+    "id": "high-street",
+    "mode": "walking",
+    "originalPointCount": 5,
+    "pointCount": 4,
+    "distance": 127,
+    "duration": 92
+  },
+  {
+    "id": "high-street",
+    "mode": "cycling",
+    "originalPointCount": 16,
+    "pointCount": 10,
+    "distance": 285,
+    "duration": 67
+  },
+  {
+    "id": "falko",
+    "mode": "walking",
+    "originalPointCount": 6,
+    "pointCount": 4,
+    "distance": 134,
+    "duration": 97
+  },
+  {
+    "id": "falko",
+    "mode": "cycling",
+    "originalPointCount": 16,
+    "pointCount": 9,
+    "distance": 279,
+    "duration": 64
+  },
+  {
+    "id": "waterside",
+    "mode": "walking",
+    "originalPointCount": 16,
+    "pointCount": 13,
+    "distance": 390,
+    "duration": 281
+  },
+  {
+    "id": "waterside",
+    "mode": "cycling",
+    "originalPointCount": 19,
+    "pointCount": 12,
+    "distance": 411,
+    "duration": 87
+  },
+  {
+    "id": "tyne-walk",
+    "mode": "walking",
+    "originalPointCount": 25,
+    "pointCount": 20,
+    "distance": 567,
+    "duration": 408
+  },
+  {
+    "id": "tyne-walk",
+    "mode": "cycling",
+    "originalPointCount": 28,
+    "pointCount": 19,
+    "distance": 588,
+    "duration": 118
+  },
+  {
+    "id": "amisfield",
+    "mode": "walking",
+    "originalPointCount": 72,
+    "pointCount": 55,
+    "distance": 2333,
+    "duration": 1680
+  },
+  {
+    "id": "amisfield",
+    "mode": "cycling",
+    "originalPointCount": 97,
+    "pointCount": 70,
+    "distance": 3322,
+    "duration": 732
+  },
+  {
+    "id": "st-marys",
+    "mode": "walking",
+    "originalPointCount": 16,
+    "pointCount": 12,
+    "distance": 379,
+    "duration": 273
+  },
+  {
+    "id": "st-marys",
+    "mode": "cycling",
+    "originalPointCount": 19,
+    "pointCount": 11,
+    "distance": 400,
+    "duration": 80
+  },
+  {
+    "id": "hospital",
+    "mode": "walking",
+    "originalPointCount": 57,
+    "pointCount": 43,
+    "distance": 1842,
+    "duration": 1326
+  },
+  {
+    "id": "hospital",
+    "mode": "cycling",
+    "originalPointCount": 71,
+    "pointCount": 33,
+    "distance": 2236,
+    "duration": 454
+  },
+  {
+    "id": "medical",
+    "mode": "walking",
+    "originalPointCount": 53,
+    "pointCount": 40,
+    "distance": 1792,
+    "duration": 1291
+  },
+  {
+    "id": "medical",
+    "mode": "cycling",
+    "originalPointCount": 66,
+    "pointCount": 34,
+    "distance": 1750,
+    "duration": 359
+  }
+]

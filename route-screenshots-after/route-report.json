@@ -1,0 +1,128 @@
+[
+  {
+    "id": "knox",
+    "detailText": "EDUCATION\nKnox Academy\n0.9 km · 11 min\nwalking estimate\n0.9 km · 4 min\ncycling estimate\n\nThe local secondary school for Haddington, set west of the town centre with sports fields nearby.\n\nWalking route: 0.9 km · 11 min. Curated route via town-centre pavements and Meadowpark, avoiding trunk-road routing.",
+    "routePathCount": 1,
+    "osrmRequests": 0
+  },
+  {
+    "id": "haddington-primary",
+    "detailText": "EDUCATION\nHaddington Primary School\n0.8 km · 10 min\nwalking estimate\n0.8 km · 4 min\ncycling estimate\n\nA central primary option close to Tynebank Road and the western approach to town.\n\nWalking route: 0.8 km · 10 min. Curated route via the westbound town route and Tynebank Road area.",
+    "routePathCount": 1,
+    "osrmRequests": 0
+  },
+  {
+    "id": "letham",
+    "detailText": "EDUCATION\nLetham Mains Primary\n1.9 km · 23 min\nwalking estimate\n1.9 km · 8 min\ncycling estimate\n\nA newer primary school serving the Letham Mains area on the western side of Haddington.\n\nWalking route: 1.9 km · 23 min. Curated route via Haddington town streets and the western approach, avoiding the A1.",
+    "routePathCount": 1,
+    "osrmRequests": 0
+  },
+  {
+    "id": "bus",
+    "detailText": "TRANSPORT\nMarket Street bus stops\n0.1 km · 1 min\nwalking estimate\n0.1 km · 1 min\ncycling estimate\n\nTown-centre stops for East Coast Buses links towards Edinburgh, North Berwick, Dunbar and nearby villages.\n\nWalking route: 0.1 km · 1 min. Curated direct route across Market Street, not the vehicle one-way system.",
+    "routePathCount": 1,
+    "osrmRequests": 0
+  },
+  {
+    "id": "ncn76",
+    "detailText": "TRANSPORT\nNational Cycle Route 76\n0.6 km · 7 min\nwalking estimate\n0.6 km · 3 min\ncycling estimate\n\nSigned cycling corridor west of town, connecting Haddington with Longniddry and the wider East Lothian coast network.\n\nWalking route: 0.6 km · 7 min. Curated route to the west-side cycle corridor, avoiding vehicle-only detours.",
+    "routePathCount": 1,
+    "osrmRequests": 0
+  },
+  {
+    "id": "railway-walk",
+    "detailText": "TRANSPORT\nLongniddry railway path\n1.2 km · 16 min\nwalking estimate\n1.2 km · 5 min\ncycling estimate\n\nTraffic-light walking and cycling route following the old railway line towards Longniddry station.\n\nWalking route: 1.2 km · 16 min. Curated route towards the old railway path and Longniddry walking/cycling corridor.",
+    "routePathCount": 1,
+    "osrmRequests": 0
+  },
+  {
+    "id": "library",
+    "detailText": "PUBLIC SERVICES\nJohn Gray Centre & Library\n0.2 km · 2 min\nwalking estimate\n0.2 km · 1 min\ncycling estimate\n\nHaddington's library, archive and local history hub, useful for children’s sessions and rainy-day browsing.\n\nWalking route: 0.2 km · 2 min. Curated short town-centre walking route.",
+    "routePathCount": 1,
+    "osrmRequests": 0
+  },
+  {
+    "id": "council",
+    "detailText": "PUBLIC SERVICES\nJohn Muir House\n0.1 km · 2 min\nwalking estimate\n0.1 km · 1 min\ncycling estimate\n\nEast Lothian Council offices in the centre of Haddington, close to Court Street and Market Street.\n\nWalking route: 0.1 km · 2 min. Curated short town-centre walking route.",
+    "routePathCount": 1,
+    "osrmRequests": 0
+  },
+  {
+    "id": "sports-centre",
+    "detailText": "EXERCISE\nAubigny Sports Centre\n0.5 km · 6 min\nwalking estimate\n0.5 km · 2 min\ncycling estimate\n\nLeisure centre with swimming, gym and classes just south of the town centre near Mill Wynd.\n\nWalking route: 0.5 km · 6 min. Curated route via central pavements towards Mill Wynd and the sports centre.",
+    "routePathCount": 1,
+    "osrmRequests": 0
+  },
+  {
+    "id": "skatepark",
+    "detailText": "EXERCISE\nNeilson Park skatepark\n0.5 km · 6 min\nwalking estimate\n0.5 km · 2 min\ncycling estimate\n\nOpen parkland, play space and skate facilities within an easy family walk from Market Street.\n\nWalking route: 0.5 km · 6 min. Curated route through the town-centre park approach, avoiding vehicle one-way detours.",
+    "routePathCount": 1,
+    "osrmRequests": 0
+  },
+  {
+    "id": "golf",
+    "detailText": "EXERCISE\nHaddington Golf Club\n2.0 km · 25 min\nwalking estimate\n2.0 km · 9 min\ncycling estimate\n\nEstablished parkland golf course to the east of town beside the Amisfield approach.\n\nWalking route: 2.0 km · 25 min. Curated eastbound route via the Amisfield approach rather than the A1.",
+    "routePathCount": 1,
+    "osrmRequests": 0
+  },
+  {
+    "id": "tesco",
+    "detailText": "SHOPPING\nTesco Superstore\n0.1 km · 2 min\nwalking estimate\n0.1 km · 1 min\ncycling estimate\n\nLarge central grocery shop at Newton Port, useful for day-to-day food shopping without needing a car.\n\nWalking route: 0.1 km · 2 min. Curated short town-centre walking route.",
+    "routePathCount": 1,
+    "osrmRequests": 0
+  },
+  {
+    "id": "aldi",
+    "detailText": "SHOPPING\nAldi Haddington\n1.9 km · 24 min\nwalking estimate\n1.9 km · 8 min\ncycling estimate\n\nDiscount supermarket on the west side of town, well placed for a cycle or combined school run.\n\nWalking route: 1.9 km · 24 min. Curated route via Haddington town streets and the western approach, avoiding the A1.",
+    "routePathCount": 1,
+    "osrmRequests": 0
+  },
+  {
+    "id": "high-street",
+    "detailText": "SHOPPING\nHigh Street shops\n0.1 km · 1 min\nwalking estimate\n0.1 km · 1 min\ncycling estimate\n\nIndependent shops, everyday errands and town-centre services are clustered a few minutes away.\n\nWalking route: 0.1 km · 1 min. Curated short walk along the town-centre shopping streets.",
+    "routePathCount": 1,
+    "osrmRequests": 0
+  },
+  {
+    "id": "falko",
+    "detailText": "FOOD & DRINK\nFalko Café & Restaurant\n0.1 km · 1 min\nwalking estimate\n0.1 km · 1 min\ncycling estimate\n\nWell-known High Street café and bakery stop for coffee, lunch and family treats.\n\nWalking route: 0.1 km · 1 min. Curated short walk along High Street.",
+    "routePathCount": 1,
+    "osrmRequests": 0
+  },
+  {
+    "id": "waterside",
+    "detailText": "FOOD & DRINK\nWaterside Bistro\n0.3 km · 4 min\nwalking estimate\n0.3 km · 1 min\ncycling estimate\n\nFood and drink close to the River Tyne, handy for combining a meal with a short riverside walk.\n\nWalking route: 0.3 km · 4 min. Curated route towards the river and Waterside area.",
+    "routePathCount": 1,
+    "osrmRequests": 0
+  },
+  {
+    "id": "tyne-walk",
+    "detailText": "WALKS & GREEN SPACE\nRiver Tyne walks\n0.5 km · 6 min\nwalking estimate\n0.5 km · 2 min\ncycling estimate\n\nGentle riverside paths from Nungate Bridge, good for dog walks, scooters and short after-school loops.\n\nWalking route: 0.5 km · 6 min. Curated route onto the River Tyne walking corridor.",
+    "routePathCount": 1,
+    "osrmRequests": 0
+  },
+  {
+    "id": "amisfield",
+    "detailText": "WALKS & GREEN SPACE\nAmisfield Walled Garden\n1.8 km · 22 min\nwalking estimate\n1.8 km · 8 min\ncycling estimate\n\nCommunity garden and destination walk east of town, especially appealing for weekend family outings.\n\nWalking route: 1.8 km · 22 min. Curated route east through Nungate towards Amisfield, avoiding trunk-road routing.",
+    "routePathCount": 1,
+    "osrmRequests": 0
+  },
+  {
+    "id": "st-marys",
+    "detailText": "WALKS & GREEN SPACE\nSt Mary's Pleasance\n0.3 km · 4 min\nwalking estimate\n0.3 km · 1 min\ncycling estimate\n\nGreen space around the historic church and riverside, a calm pocket close to the High Street.\n\nWalking route: 0.3 km · 4 min. Curated short route to the church green and riverside area.",
+    "routePathCount": 1,
+    "osrmRequests": 0
+  },
+  {
+    "id": "hospital",
+    "detailText": "HEALTH\nEast Lothian Community Hospital\n1.3 km · 17 min\nwalking estimate\n1.3 km · 6 min\ncycling estimate\n\nLocal community hospital on Alderston Road, reachable by bike from the town centre.\n\nWalking route: 1.3 km · 17 min. Curated route via Haddington's west-side street network, avoiding the A1.",
+    "routePathCount": 1,
+    "osrmRequests": 0
+  },
+  {
+    "id": "medical",
+    "detailText": "HEALTH\nTyne Medical Practice\n1.3 km · 16 min\nwalking estimate\n1.3 km · 6 min\ncycling estimate\n\nTown medical practice area near the community hospital and western residential neighbourhoods.\n\nWalking route: 1.3 km · 16 min. Curated route via Haddington's west-side street network, avoiding the A1.",
+    "routePathCount": 1,
+    "osrmRequests": 0
+  }
+]
