@@ -280,11 +280,11 @@ const destinations = [
   },
   {
     id: "diggorys",
-    name: "Diggory's Coffee Shop",
+    name: "Mountain Coffee Haddington",
     category: "food",
     lat: 55.9553474,
     lng: -2.7766707,
-    description: "High Street coffee shop with drinks, cakes and light lunches in the centre of Haddington.",
+    description: "Coffee shop at 28 High Street, Haddington EH41 3ES, on the town-centre High Street.",
     image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80",
   },
   {
