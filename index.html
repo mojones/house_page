@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>32 Market Street | Haddington Family Facilities Map</title>
+    <link rel="preconnect" href="https://basemaps.cartocdn.com" />
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero__copy">
+          <p class="eyebrow">32 Market Street, Haddington EH41 3JE</p>
+          <h1 id="page-title">Family facilities within an easy walk or cycle</h1>
+          <p>
+            Explore schools, parks, shops, services, travel links and everyday
+            places around the town centre. Pick a destination to see walking
+            and cycling estimates, a route line and a short local note.
+          </p>
+        </div>
+        <div class="hero__card" aria-label="Quick summary">
+          <span class="hero__number">20+</span>
+          <span>family-focused places mapped across town</span>
+        </div>
+      </section>
+
+      <section class="planner" aria-label="Interactive local area map">
+        <aside class="panel">
+          <div class="panel__section">
+            <h2>Routes</h2>
+            <div class="mode-toggle" role="group" aria-label="Route mode">
+              <button class="mode-toggle__button is-active" data-mode="walking">Walking</button>
+              <button class="mode-toggle__button" data-mode="cycling">Cycling</button>
+            </div>
+          </div>
+
+          <div class="panel__section">
+            <h2>Categories</h2>
+            <label class="mobile-select" for="categorySelect">
+              <span>Category</span>
+              <select id="categorySelect" aria-label="Filter destinations by category"></select>
+            </label>
+            <div id="categoryFilters" class="filters" aria-label="Filter destinations"></div>
+          </div>
+
+          <div class="panel__section panel__section--mobile-place">
+            <h2>Place</h2>
+            <label class="mobile-select mobile-select--always" for="panelDestinationSelect">
+              <span>Choose a destination</span>
+              <select id="panelDestinationSelect" aria-label="Choose a destination to show on the map"></select>
+            </label>
+          </div>
+
+          <div class="panel__section">
+            <h2>Selected Place</h2>
+            <article id="detailCard" class="detail-card">
+              <p class="detail-card__empty">Select any marker or list item to view route details.</p>
+            </article>
+          </div>
+        </aside>
+
+        <div class="map-wrap">
+          <div id="map" class="map" aria-label="Map of facilities near 32 Market Street"></div>
+        </div>
+      </section>
+
+      <section class="destination-browser" aria-labelledby="destinations-title">
+        <div>
+          <p class="eyebrow">Browse by need</p>
+          <h2 id="destinations-title">Local destinations</h2>
+        </div>
+        <label class="mobile-select destination-select" for="destinationSelect">
+          <span>Choose a destination</span>
+          <select id="destinationSelect" aria-label="Choose a destination to show on the map"></select>
+        </label>
+        <div id="destinationGrid" class="destination-grid"></div>
+      </section>
+
+      <section class="notes" aria-label="Map notes">
+        <p>
+          Distance and time estimates use static walking and cycling route geometry
+          generated from pedestrian/cycle map data. Bus route names, facilities and
+          place names should be checked with operators or venues before relying on
+          them for a viewing pack.
+        </p>
+        <p>
+          Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>.
+          Local context cross-checked against public listings including
+          <a href="https://www.eastlothian.gov.uk/">East Lothian Council</a>,
+          <a href="https://www.enjoyleisure.com/">Enjoy Leisure</a>,
+          <a href="https://www.eastcoastbuses.co.uk/">East Coast Buses</a> and
+          <a href="https://www.sustrans.org.uk/">Sustrans</a>.
+        </p>
+      </section>
+    </main>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      crossorigin=""
+    ></script>
+    <script type="module" src="/src/app.js"></script>
+  </body>
+</html>
