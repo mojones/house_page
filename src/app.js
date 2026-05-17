@@ -460,6 +460,7 @@ const detailCard = document.querySelector("#detailCard");
 const categorySelect = document.querySelector("#categorySelect");
 const destinationSelect = document.querySelector("#destinationSelect");
 const panelDestinationSelect = document.querySelector("#panelDestinationSelect");
+const panelDestinationList = document.querySelector("#panelDestinationList");
 const destinationSelects = [destinationSelect, panelDestinationSelect].filter(Boolean);
 
 function isMobileLayout() {
@@ -643,6 +644,22 @@ function renderDestinationBrowser() {
     select.innerHTML = selectHtml;
     select.value = visible.some((destination) => destination.id === state.selectedId) ? state.selectedId : "";
   });
+
+  const categoryIsSelected = state.activeCategory !== "all";
+  panelDestinationSelect.closest(".mobile-select").hidden = categoryIsSelected;
+  panelDestinationList.hidden = !categoryIsSelected;
+  panelDestinationList.innerHTML = categoryIsSelected
+    ? visible
+        .map(
+          (destination) => `
+            <button class="mobile-destination-button${destination.id === state.selectedId ? " is-active" : ""}" data-destination="${destination.id}" type="button">
+              <span>${destination.name}</span>
+              <strong>${formatDistance(destination, state.activeMode)}</strong>
+            </button>
+          `,
+        )
+        .join("")
+    : "";
 }
 
 function addMarkers() {
@@ -770,6 +787,12 @@ function attachEvents() {
       if (!event.target.value) return;
       selectDestination(event.target.value);
     });
+  });
+
+  panelDestinationList.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-destination]");
+    if (!button) return;
+    selectDestination(button.dataset.destination);
   });
 
   detailCard.addEventListener("click", (event) => {
