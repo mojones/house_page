@@ -635,8 +635,7 @@ function renderDestinationBrowser() {
   const selectHtml = [
     `<option value="">Select a destination</option>`,
     ...visible.map((destination) => {
-      const category = categories[destination.category];
-      return `<option value="${destination.id}">${category.label}: ${destination.name} (${formatDistance(destination, state.activeMode)})</option>`;
+      return `<option value="${destination.id}">${destination.name} (${formatDistance(destination, state.activeMode)})</option>`;
     }),
   ].join("");
 
