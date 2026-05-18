@@ -39,20 +39,15 @@
 
           <div class="panel__section">
             <h2>Categories</h2>
-            <label class="mobile-select" for="categorySelect">
+            <label class="mobile-select mobile-select--always" for="categorySelect">
               <span>Category</span>
               <select id="categorySelect" aria-label="Filter destinations by category"></select>
             </label>
-            <div id="categoryFilters" class="filters" aria-label="Filter destinations"></div>
           </div>
 
-          <div class="panel__section panel__section--mobile-place">
-            <h2>Place</h2>
-            <label class="mobile-select mobile-select--always" for="panelDestinationSelect">
-              <span>Choose a destination</span>
-              <select id="panelDestinationSelect" aria-label="Choose a destination to show on the map"></select>
-            </label>
-            <div id="panelDestinationList" class="mobile-destination-list" aria-label="Destinations in selected category"></div>
+          <div class="panel__section panel__section--destinations">
+            <h2>Destinations</h2>
+            <div id="destinationGrid" class="destination-grid destination-grid--panel" aria-label="Destinations in selected category"></div>
           </div>
 
         </aside>
@@ -75,18 +70,6 @@
             <p class="detail-card__empty">Select a destination to see route details.</p>
           </div>
         </section>
-      </section>
-
-      <section class="destination-browser" aria-labelledby="destinations-title">
-        <div>
-          <p class="eyebrow">Browse by need</p>
-          <h2 id="destinations-title">Local destinations</h2>
-        </div>
-        <label class="mobile-select destination-select" for="destinationSelect">
-          <span>Choose a destination</span>
-          <select id="destinationSelect" aria-label="Choose a destination to show on the map"></select>
-        </label>
-        <div id="destinationGrid" class="destination-grid"></div>
       </section>
 
       <section class="notes" aria-label="Map notes">

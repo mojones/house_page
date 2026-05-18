@@ -359,18 +359,13 @@ L.marker([home.lat, home.lng], { icon: homeIcon })
   .addTo(map)
   .bindPopup("<strong>32 Market Street</strong><br>Starting point for all routes.");
 
-const filterContainer = document.querySelector("#categoryFilters");
 const destinationGrid = document.querySelector("#destinationGrid");
 const mapWrap = document.querySelector(".map-wrap");
 const categorySelect = document.querySelector("#categorySelect");
-const destinationSelect = document.querySelector("#destinationSelect");
-const panelDestinationSelect = document.querySelector("#panelDestinationSelect");
-const panelDestinationList = document.querySelector("#panelDestinationList");
 const mapDetail = document.querySelector("#mapDetail");
 const mapDetailTitle = document.querySelector("#mapDetailTitle");
 const mapDetailToggle = document.querySelector("#mapDetailToggle");
 const mapDetailBody = document.querySelector("#mapDetailBody");
-const destinationSelects = [destinationSelect, panelDestinationSelect].filter(Boolean);
 
 function isMobileLayout() {
   return window.matchMedia("(max-width: 640px)").matches;
@@ -501,14 +496,6 @@ function renderDetail(destination, routeInfo) {
 }
 
 function renderFilters() {
-  const buttons = [
-    `<button class="filter-button is-active" data-category="all">All</button>`,
-    ...Object.entries(categories).map(
-      ([id, category]) => `<button class="filter-button" data-category="${id}">${category.label}</button>`,
-    ),
-  ];
-  filterContainer.innerHTML = buttons.join("");
-
   categorySelect.innerHTML = [
     `<option value="all">All categories</option>`,
     ...Object.entries(categories).map(([id, category]) => `<option value="${id}">${category.label}</option>`),
@@ -528,42 +515,14 @@ function renderDestinationBrowser() {
     .map((destination) => {
       const category = categories[destination.category];
       return `
-        <button class="destination-card" style="--card-image:url('${destination.image}')" data-destination="${destination.id}">
+        <button class="destination-list-item" data-destination="${destination.id}" type="button">
           <span class="tag" style="--tag-color:${category.color}">${category.label}</span>
-          <h3>${destination.name}</h3>
-          <p>${formatDistance(destination, state.activeMode)}</p>
+          <span class="destination-list-item__name">${destination.name}</span>
+          <span class="destination-list-item__meta">${formatDistance(destination, state.activeMode)}</span>
         </button>
       `;
     })
     .join("");
-
-  const selectHtml = [
-    `<option value="">Select a destination</option>`,
-    ...visible.map((destination) => {
-      return `<option value="${destination.id}">${destination.name} (${formatDistance(destination, state.activeMode)})</option>`;
-    }),
-  ].join("");
-
-  destinationSelects.forEach((select) => {
-    select.innerHTML = selectHtml;
-    select.value = visible.some((destination) => destination.id === state.selectedId) ? state.selectedId : "";
-  });
-
-  const categoryIsSelected = state.activeCategory !== "all";
-  panelDestinationSelect.closest(".mobile-select").hidden = categoryIsSelected;
-  panelDestinationList.hidden = !categoryIsSelected;
-  panelDestinationList.innerHTML = categoryIsSelected
-    ? visible
-        .map(
-          (destination) => `
-            <button class="mobile-destination-button${destination.id === state.selectedId ? " is-active" : ""}" data-destination="${destination.id}" type="button">
-              <span>${destination.name}</span>
-              <strong>${formatDistance(destination, state.activeMode)}</strong>
-            </button>
-          `,
-        )
-        .join("")
-    : "";
 }
 
 function addMarkers() {
@@ -617,9 +576,6 @@ function setRouteMode(mode) {
 function setCategory(category) {
   state.activeCategory = category;
   categorySelect.value = category;
-  document.querySelectorAll(".filter-button").forEach((item) => {
-    item.classList.toggle("is-active", item.dataset.category === category);
-  });
   filterMarkers();
   renderDestinationBrowser();
 }
@@ -675,13 +631,6 @@ async function selectDestination(id) {
 }
 
 function attachEvents() {
-  filterContainer.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-category]");
-    if (!button) return;
-
-    setCategory(button.dataset.category);
-  });
-
   categorySelect.addEventListener("change", (event) => {
     setCategory(event.target.value);
   });
@@ -695,19 +644,6 @@ function attachEvents() {
   });
 
   destinationGrid.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-destination]");
-    if (!button) return;
-    selectDestination(button.dataset.destination);
-  });
-
-  destinationSelects.forEach((select) => {
-    select.addEventListener("change", (event) => {
-      if (!event.target.value) return;
-      selectDestination(event.target.value);
-    });
-  });
-
-  panelDestinationList.addEventListener("click", (event) => {
     const button = event.target.closest("[data-destination]");
     if (!button) return;
     selectDestination(button.dataset.destination);
