@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://unpkg.com" />
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script type="module" crossorigin src="/house_page/assets/index-BU8xop6S.js"></script>
-    <link rel="stylesheet" crossorigin href="/house_page/assets/index-D5pIY6_y.css">
+    <script type="module" crossorigin src="/house_page/assets/index-S-weP85p.js"></script>
+    <link rel="stylesheet" crossorigin href="/house_page/assets/index-DRrKQGFr.css">
   </head>
   <body>
     <main class="shell">
@@ -56,17 +56,26 @@
             <div id="panelDestinationList" class="mobile-destination-list" aria-label="Destinations in selected category"></div>
           </div>
 
-          <div class="panel__section">
-            <h2>Selected Place</h2>
-            <article id="detailCard" class="detail-card">
-              <p class="detail-card__empty">Select any marker or list item to view route details.</p>
-            </article>
-          </div>
         </aside>
 
         <div class="map-wrap">
           <div id="map" class="map" aria-label="Map of facilities near 32 Market Street"></div>
         </div>
+
+        <section id="mapDetail" class="map-detail" hidden aria-live="polite">
+          <div class="map-detail__header">
+            <div>
+              <p class="eyebrow map-detail__eyebrow">Selected place</p>
+              <h2 id="mapDetailTitle">Route details</h2>
+            </div>
+            <button id="mapDetailToggle" class="map-detail__toggle" type="button" aria-expanded="true">
+              Collapse
+            </button>
+          </div>
+          <div id="mapDetailBody" class="map-detail__body">
+            <p class="detail-card__empty">Select a destination to see route details.</p>
+          </div>
+        </section>
       </section>
 
       <section class="destination-browser" aria-labelledby="destinations-title">
