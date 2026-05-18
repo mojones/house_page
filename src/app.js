@@ -513,10 +513,8 @@ function renderDestinationBrowser() {
 
   destinationGrid.innerHTML = visible
     .map((destination) => {
-      const category = categories[destination.category];
       return `
         <button class="destination-list-item" data-destination="${destination.id}" type="button">
-          <span class="tag" style="--tag-color:${category.color}">${category.label}</span>
           <span class="destination-list-item__name">${destination.name}</span>
           <span class="destination-list-item__meta">${formatDistance(destination, state.activeMode)}</span>
         </button>
