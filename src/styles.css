@@ -42,7 +42,7 @@ a {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 280px;
+  grid-template-columns: 1fr;
   gap: 28px;
   align-items: end;
   margin-bottom: 24px;
@@ -96,17 +96,7 @@ h2 {
 }
 
 .hero__card {
-  min-height: 220px;
-  display: grid;
-  align-content: end;
-  gap: 10px;
-  padding: 26px;
-  border-radius: 34px;
-  color: #fff9eb;
-  background:
-    linear-gradient(rgba(22, 77, 56, 0.75), rgba(22, 77, 56, 0.92)),
-    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80") center/cover;
-  box-shadow: var(--shadow);
+  display: none;
 }
 
 .hero__number {
@@ -119,7 +109,7 @@ h2 {
 
 .planner {
   display: grid;
-  grid-template-columns: 360px minmax(0, 1fr);
+  grid-template-columns: 320px minmax(0, 1fr) 340px;
   min-height: 720px;
   border: 1px solid var(--line);
   border-radius: 34px;
@@ -136,6 +126,13 @@ h2 {
   background: rgba(255, 247, 232, 0.96);
   border-right: 1px solid var(--line);
   overflow: auto;
+}
+
+.map-wrap {
+  position: relative;
+  min-height: 720px;
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
 }
 
 .panel__section {
@@ -201,11 +198,6 @@ h2 {
   background: var(--green);
 }
 
-.map-wrap {
-  position: relative;
-  min-height: 720px;
-}
-
 .map {
   width: 100%;
   height: 100%;
@@ -260,12 +252,13 @@ h2 {
 }
 
 .map-detail {
-  margin-top: 14px;
-  padding: 16px;
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  background: rgba(255, 252, 243, 0.86);
-  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 22px;
+  background: rgba(255, 247, 232, 0.96);
+  border-left: 1px solid var(--line);
+  overflow: auto;
 }
 
 .map-detail__header {
@@ -300,6 +293,7 @@ h2 {
 
 .map-detail__body {
   margin-top: 14px;
+  padding: 0;
 }
 
 .map-detail__body p {
@@ -496,6 +490,13 @@ h2 {
 
   .panel {
     border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .map-wrap {
+    border-left: 0;
+    border-right: 0;
+    border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
   }
 
