@@ -158,6 +158,10 @@ h2 {
   display: none;
 }
 
+.mobile-select--always {
+  display: block;
+}
+
 .mobile-select span {
   display: block;
   margin-bottom: 7px;
