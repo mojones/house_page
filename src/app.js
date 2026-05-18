@@ -361,11 +361,15 @@ L.marker([home.lat, home.lng], { icon: homeIcon })
 
 const filterContainer = document.querySelector("#categoryFilters");
 const destinationGrid = document.querySelector("#destinationGrid");
-const detailCard = document.querySelector("#detailCard");
+const mapWrap = document.querySelector(".map-wrap");
 const categorySelect = document.querySelector("#categorySelect");
 const destinationSelect = document.querySelector("#destinationSelect");
 const panelDestinationSelect = document.querySelector("#panelDestinationSelect");
 const panelDestinationList = document.querySelector("#panelDestinationList");
+const mapDetail = document.querySelector("#mapDetail");
+const mapDetailTitle = document.querySelector("#mapDetailTitle");
+const mapDetailToggle = document.querySelector("#mapDetailToggle");
+const mapDetailBody = document.querySelector("#mapDetailBody");
 const destinationSelects = [destinationSelect, panelDestinationSelect].filter(Boolean);
 
 function isMobileLayout() {
@@ -458,7 +462,6 @@ function popupHtml(destination) {
   const category = categories[destination.category];
   return `
     <article class="popup-card">
-      <img src="${destination.image}" alt="" loading="lazy">
       <div class="popup-card__body">
         <span class="tag" style="--tag-color:${category.color}">${category.label}</span>
         <h3>${destination.name}</h3>
@@ -478,26 +481,22 @@ function popupHtml(destination) {
 
 function renderDetail(destination, routeInfo) {
   const category = categories[destination.category];
+  const activeLabel = state.activeMode === "walking" ? "Walking" : "Cycling";
+  mapDetailTitle.textContent = destination.name;
+  const walkingLabel = formatDistance(destination, "walking");
+  const cyclingLabel = formatDistance(destination, "cycling");
   const routeNote = routeInfo
-    ? `<p><strong>${state.activeMode === "walking" ? "Walking" : "Cycling"} route:</strong> ${routeInfo.distanceKm} km · ${routeInfo.minutes} min. ${routeInfo.note ?? "Generated from route data."}</p>`
-    : `<p>Showing an estimated ${state.activeMode} distance. Select again if route data is still loading.</p>`;
+    ? `<span class="map-detail__route-note"><strong>${activeLabel} route:</strong> ${routeInfo.distanceKm} km · ${routeInfo.minutes} min. ${routeInfo.note ?? "Generated from route data."}</span>`
+    : `<span class="map-detail__route-note">Showing an estimated ${state.activeMode} distance. Select again if route data is still loading.</span>`;
 
-  detailCard.innerHTML = `
-    <img src="${destination.image}" alt="" loading="lazy">
-    <div class="detail-card__body">
-      <span class="tag" style="--tag-color:${category.color}">${category.label}</span>
-      <h3>${destination.name}</h3>
-      <div class="distance-row">
-        <button class="distance-pill distance-pill--button" data-route-mode="walking" data-destination="${destination.id}" type="button">
-          <strong>${formatDistance(destination, "walking")}</strong><span>show walking route</span>
-        </button>
-        <button class="distance-pill distance-pill--button" data-route-mode="cycling" data-destination="${destination.id}" type="button">
-          <strong>${formatDistance(destination, "cycling")}</strong><span>show cycling route</span>
-        </button>
-      </div>
-      <p>${destination.description}</p>
-      ${routeNote}
-    </div>
+  mapDetailBody.innerHTML = `
+    <span class="tag" style="--tag-color:${category.color}">${category.label}</span>
+    <p class="map-detail__text">${destination.description}</p>
+    <p class="map-detail__routes">
+      <button class="map-detail__route" data-route-mode="walking" data-destination="${destination.id}" type="button">Walking: <strong>${walkingLabel}</strong></button>
+      <button class="map-detail__route" data-route-mode="cycling" data-destination="${destination.id}" type="button">Cycling: <strong>${cyclingLabel}</strong></button>
+    </p>
+    <p class="map-detail__note">${routeNote}</p>
   `;
 }
 
@@ -569,11 +568,9 @@ function renderDestinationBrowser() {
 
 function addMarkers() {
   destinations.forEach((destination) => {
-    const marker = L.marker([destination.lat, destination.lng], { icon: markerIcon(destination) })
-      .addTo(map)
-      .bindPopup(popupHtml(destination));
+    const marker = L.marker([destination.lat, destination.lng], { icon: markerIcon(destination) }).addTo(map);
 
-    marker.on("click", () => selectDestination(destination.id, !isMobileLayout()));
+    marker.on("click", () => selectDestination(destination.id));
     state.markers.set(destination.id, marker);
   });
 }
@@ -593,6 +590,20 @@ function clearRoute() {
     state.routeLayer.remove();
     state.routeLayer = null;
   }
+}
+
+function showOverlay() {
+  mapDetail.hidden = false;
+}
+
+function hideOverlay() {
+  mapDetail.hidden = true;
+}
+
+function setDetailExpanded(expanded) {
+  mapDetailBody.hidden = !expanded;
+  mapDetailToggle.textContent = expanded ? "Collapse" : "Expand";
+  mapDetailToggle.setAttribute("aria-expanded", String(expanded));
 }
 
 function setRouteMode(mode) {
@@ -647,17 +658,19 @@ async function drawRoute(destination) {
   map.fitBounds(bounds.pad(0.35), { animate: true });
 }
 
-async function selectDestination(id, openPopup = false) {
+async function selectDestination(id) {
   const destination = destinations.find((item) => item.id === id);
   if (!destination) return;
 
   state.selectedId = id;
+  showOverlay();
+  setDetailExpanded(true);
   await drawRoute(destination);
 
-  if (openPopup && !isMobileLayout()) {
-    state.markers.get(id).openPopup();
-  } else {
-    state.markers.get(id).closePopup();
+  if (isMobileLayout()) {
+    requestAnimationFrame(() => {
+      mapWrap?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
   }
 }
 
@@ -678,7 +691,7 @@ function attachEvents() {
     if (!button) return;
 
     setRouteMode(button.dataset.mode);
-    if (state.selectedId) selectDestination(state.selectedId, !isMobileLayout());
+    if (state.selectedId) selectDestination(state.selectedId);
   });
 
   destinationGrid.addEventListener("click", (event) => {
@@ -700,28 +713,27 @@ function attachEvents() {
     selectDestination(button.dataset.destination);
   });
 
-  detailCard.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-route-mode][data-destination]");
-    if (!button) return;
-
-    setRouteMode(button.dataset.routeMode);
-    selectDestination(button.dataset.destination, !isMobileLayout());
-  });
-
-  map.getContainer().addEventListener("click", (event) => {
+  mapDetail.addEventListener("click", (event) => {
     const button = event.target.closest("[data-route-mode][data-destination]");
     if (!button) return;
 
     event.preventDefault();
     event.stopPropagation();
     setRouteMode(button.dataset.routeMode);
-    selectDestination(button.dataset.destination, !isMobileLayout());
+    selectDestination(button.dataset.destination);
+  });
+
+  mapDetailToggle.addEventListener("click", () => {
+    const expanded = mapDetailBody.hidden;
+    setDetailExpanded(expanded);
   });
 }
 
 renderFilters();
 addMarkers();
 renderDestinationBrowser();
+setDetailExpanded(true);
+hideOverlay();
 attachEvents();
 
 setTimeout(() => map.invalidateSize(), 120);

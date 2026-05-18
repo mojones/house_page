@@ -235,13 +235,6 @@ h2 {
   background: var(--marker, var(--green));
 }
 
-.detail-card {
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  background: #fffaf0;
-}
-
 .detail-card__empty {
   margin: 0;
   padding: 18px;
@@ -257,8 +250,105 @@ h2 {
 }
 
 .detail-card__body,
-.popup-card__body {
+.popup-card__body,
+.map-detail__body {
   padding: 16px;
+}
+
+.map-detail[hidden] {
+  display: none;
+}
+
+.map-detail {
+  margin-top: 14px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: rgba(255, 252, 243, 0.86);
+  box-shadow: var(--shadow);
+}
+
+.map-detail__header {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.map-detail__eyebrow {
+  margin-bottom: 6px;
+}
+
+.map-detail__header h2 {
+  margin-bottom: 0;
+}
+
+.map-detail__toggle {
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 12px;
+  color: var(--ink);
+  background: #fffaf0;
+  cursor: pointer;
+}
+
+.map-detail__toggle:hover,
+.map-detail__toggle:focus {
+  outline: 3px solid rgba(31, 107, 75, 0.16);
+}
+
+.map-detail__body {
+  margin-top: 14px;
+}
+
+.map-detail__body p {
+  margin-bottom: 8px;
+  color: var(--muted);
+  line-height: 1.45;
+  font-size: 0.88rem;
+}
+
+.map-detail__text {
+  margin-top: 0;
+}
+
+.map-detail__routes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 10px;
+}
+
+.map-detail__route {
+  border: 0;
+  border-radius: 999px;
+  padding: 0;
+  color: var(--green-dark);
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.map-detail__route strong {
+  text-decoration: underline;
+}
+
+.map-detail__route:hover,
+.map-detail__route:focus {
+  outline: 0;
+  color: var(--ink);
+}
+
+.map-detail__note {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.map-detail__route-note {
+  display: inline;
 }
 
 .tag {
@@ -497,17 +587,20 @@ h2 {
     display: block;
   }
 
-  .panel__section:has(.detail-card) {
-    order: 3;
-    margin-top: 8px;
-  }
-
   .map-wrap {
     order: 2;
     min-height: 64vh;
     border: 1px solid var(--line);
     border-radius: 18px;
     overflow: hidden;
+  }
+
+  .map-detail {
+    order: 3;
+    margin-top: 8px;
+    padding: 12px;
+    border-radius: 16px;
+    box-shadow: none;
   }
 
   .map {
@@ -608,27 +701,18 @@ h2 {
     margin: 10px 0;
   }
 
-  .detail-card {
-    border-radius: 16px;
+  .map-detail__body {
+    margin-top: 10px;
   }
 
-  .detail-card img {
-    display: none;
+  .map-detail__body p {
+    margin-bottom: 7px;
+    font-size: 0.8rem;
   }
 
-  .detail-card__body {
-    padding: 12px;
-  }
-
-  .detail-card h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    line-height: 1.1;
-  }
-
-  .detail-card p {
+  .map-detail__routes {
+    gap: 6px;
     margin-bottom: 8px;
-    font-size: 0.92rem;
   }
 
   .distance-pill {
